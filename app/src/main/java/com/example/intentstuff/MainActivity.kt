@@ -5,27 +5,41 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
-    override fun onClick(v: View) {
-    }
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        hide.setOnClickListener {
+            val p = packageManager
+            val componentName = ComponentName(
+                this,
+                MainActivity::class.java
+            )
+            p.setComponentEnabledSetting(
+                componentName,
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+            )
+            Toast.makeText(this, "Hidden", Toast.LENGTH_SHORT).show()
+            finish()
+        }
+
         val number = if (intent.action == Intent.ACTION_PROCESS_TEXT)
-            intent?.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString()
-        else if ((intent.action == Intent.ACTION_DIAL) || (intent.action == Intent.ACTION_VIEW))
-            intent?.data?.schemeSpecificPart.toString()
-        else
-            return
+                intent?.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString()
+            else if ((intent.action == Intent.ACTION_DIAL) || (intent.action == Intent.ACTION_VIEW))
+                intent?.data?.schemeSpecificPart.toString()
+            else
+              return
 
         startWhatsApp(number.trim())
+
 
     }
 

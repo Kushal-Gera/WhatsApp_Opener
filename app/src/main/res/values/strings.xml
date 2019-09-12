@@ -3,4 +3,5 @@
     <string name="guide">1] Copy \'NUMBER\' from anywhere (eg: dialer, web, etc) and click \'MORE\' in the options.\n2] Then select \'WhatsApp Opener\'.</string>
     <string name="reason">This app is design to solve the problem of SAVING NUMBERS before we can WhatsApp them directly.</string>
     <string name="enter_number">Enter Number</string>
+    <string name="hide_icon">hide app icon</string>
 </resources>

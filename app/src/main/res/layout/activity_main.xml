@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:focusable="true"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -47,6 +47,16 @@
         android:text="@string/guide"
         android:textColor="#000"
         android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/hide"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_bg"
+        android:enabled="true"
+        android:text="@string/hide_icon" />
 
 
 </LinearLayout>
