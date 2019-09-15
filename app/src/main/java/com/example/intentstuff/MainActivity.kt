@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //place it before intent and get stuff....
-        hide_icon()
+//        hide_icon()
 
         val number = if (intent.action == Intent.ACTION_PROCESS_TEXT)
             intent?.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString()
@@ -29,10 +29,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hide_icon() {
-        hide.setOnClickListener {
-            Toast.makeText(this, "In Working Phase", Toast.LENGTH_SHORT).show()
-        }
-
 //        hide.setOnClickListener {
 //            val p = packageManager
 //            val componentName = ComponentName(
